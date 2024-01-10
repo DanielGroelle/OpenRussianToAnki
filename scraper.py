@@ -27,15 +27,15 @@ writer.writerow(["word", "translations", "part of speech", "russian sentence", "
 outputting = True
 startvalue = 0
 while outputting:
-  page = requests.get(baseAPI + "wordlists/all?level=B1&lang=en&start=" + str(startvalue))
+  page = requests.get(baseAPI + "wordlists/all?level=" + languagelevel + "&lang=en&start=" + str(startvalue))
   page = page.json()
   response = page["result"]["entries"]
 
   print(startvalue)
-  #increment startvalue for next api call
+  #increment startvalue for next api call (api only returns in groups of 50 words)
   startvalue += 50
   if (len(response) == 0):
-    outputting = False
+    outputting = False #stops the while loop and finishes the script
 
   for wordobj in response:
     word = wordobj["bare"]
@@ -47,7 +47,7 @@ while outputting:
       pronunciation = pronunciation.split("'")
       pronunciation = u'\u0301'.join(pronunciation)
 
-    #convert the word to its utf8 form
+    #convert the word to its utf8 form for fetching
     linkutf8 = word.encode("utf-8") #ex: b'\xd0\xba\xd1\x83\xd0\xb4'
     linkutf8 = str(linkutf8)
     linkutf8 = linkutf8.split(r"\x")
@@ -68,6 +68,7 @@ while outputting:
 
     russiansentence = ""
     englishsentence = ""
+    #if sentence data exists
     if (len(worddata[0]["sentences"]) != 0):
       sentencedata = worddata[0]["sentences"][0]
       russiansentence = sentencedata["ru"]
@@ -90,9 +91,9 @@ while outputting:
         if (partofspeech.find("verb") != -1 and partofspeech.find("adverb") == -1 and tl[:2] != "to"):
             translation = "to " + tl
         translations.append(translation)
-
     translations = ', '.join(str(translation) for translation in translations)
 
+    #append to csv file all the data we processed
     writer.writerow([word, translations, partofspeech, russiansentence, englishsentence, pronunciation, baseURL+word])
 
 outputfile.close()
