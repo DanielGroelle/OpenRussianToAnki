@@ -26,7 +26,7 @@ The accepted levels are as follows:
 
 Those familiar with language learning will know these follow the same standard of language proficiency levels outlined by the [Common European Framework of Reference for Languages](https://wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages).
 
-Directly beneath ``languagelevel`` are two variables called ``singletranslationlimit`` and ``uniquetranslationlimit``. ``singletranslationlimit`` refers to the number of translations for a single meaning will be scraped. ``uniquetranslationlimit`` refers to the number of unique meanings will be scraped. Without these limits, some words have many esoteric meanings and can clutter up Anki cards. Feel free to change them to your preference.
+Directly beneath ``languagelevel`` are two variables called ``singletranslationlimit`` and ``uniquetranslationlimit``. ``singletranslationlimit`` refers to the number of translations for a single meaning will be scraped. ``uniquetranslationlimit`` refers to the number of unique meanings will be scraped. Without these limits, some words have many esoteric meanings and can clutter up Anki cards.
 
 The final preference is a variable called ``prependto``. When true, this variable will prepend "to" to any verb's translation if it does not already have it. This can sometimes create strange translations, so it is kept false by default.
 
