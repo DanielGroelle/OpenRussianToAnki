@@ -15,7 +15,7 @@ These include:
 In order to run this script you must have python version 3.10 or newer (preferably the latest version) installed on your computer. This project does not require any external packages.
 
 # Usage
-In the ``scraper.py`` file, there is a variable near the top called ``languagelevel``. This variable accepts any of the possible language levels that OpenRussian has a list of words for.
+In the ``scraper.py`` file, there is are a set of preferences for you to adjust. The first and most important is a variable called ``languagelevel``. This variable accepts any of the possible language levels that OpenRussian has a list of words for.
 The accepted levels are as follows:
 - A1
 - A2
@@ -26,7 +26,13 @@ The accepted levels are as follows:
 
 Those familiar with language learning will know these follow the same standard of language proficiency levels outlined by the [Common European Framework of Reference for Languages](https://wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages).
 
-Once the desired language level has been inputed, simply run the command ``python ./scraper.py`` in the terminal while inside the folder. The terminal will output each word that it has scraped and added to the .csv file it has created. Once it has finished, you can find a new file created following the format ``output1.csv``. This file can then be dragged and imported into Anki, making sure to set the field separator to ``Comma``. You can then set the field mapping according to the card type you prefer to use. Once you are finished and have pressed ``Import``, make sure to go into the browse menu and delete the card with the default data "word", "translations", "part of speech", etc. You are now ready to study Russian in Anki!
+Directly beneath ``languagelevel`` are two variables called ``singletranslationlimit`` and ``uniquetranslationlimit``. ``singletranslationlimit`` refers to the number of translations for a single meaning will be scraped. ``uniquetranslationlimit`` refers to the number of unique meanings will be scraped. Without these limits, some words have many esoteric meanings and can clutter up Anki cards. Feel free to change them to your preference.
+
+The final preference is a variable called ``prependto``. When true, this variable will prepend "to" to any verb's translation if it does not already have it. This can sometimes create strange translations, so it is kept false by default.
+
+Once the desired preferences have been set, simply run the command ``python ./scraper.py`` in the terminal while inside the folder. The terminal will output each word that it has scraped and added to the .csv file it has created. Once it has finished, you can find a new file created following the format ``output1.csv``. This file can then be dragged and imported into Anki, making sure to set the field separator to ``Comma``. You can then set the field mapping according to the card type you prefer to use. Once you are finished and have pressed ``Import``, make sure to go into the browse menu and delete the card with the default data "word", "translations", "part of speech", etc. You are now ready to study Russian in Anki!
+
+It is important to be aware that OpenRussian is a dictionary created and maintained by a community of Russian speakers and learners. Not every translation will be completely accurate or very helpful. This scraper also is not perfect and may miss some meanings of a word or create confusing cards. As a result of these two factors, the quality of every card may not be perfect or even very good. It is important to check each card as you study it and adjust it to be more refined and accurate.
 
 # License
 This is free and unencumbered software released into the public domain.
