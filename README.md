@@ -33,29 +33,3 @@ The final preference is a variable called ``prependto``. When true, this variabl
 Once the desired preferences have been set, simply run the command ``python ./scraper.py`` in the terminal while inside the folder. The terminal will output each word that it has scraped and added to the .csv file it has created. Once it has finished, you can find a new file created following the format ``output1.csv``. This file can then be dragged and imported into Anki, making sure to set the field separator to ``Comma``. You can then set the field mapping according to the card type you prefer to use. Once you are finished and have pressed ``Import``, make sure to go into the browse menu and delete the card with the default data "word", "translations", "part of speech", etc. You are now ready to study Russian in Anki!
 
 It is important to be aware that OpenRussian is a dictionary created and maintained by a community of Russian speakers and learners. Not every translation will be completely accurate or very helpful. This scraper also is not perfect and may miss some meanings of a word or create confusing cards. As a result of these two factors, the quality of every card may not be perfect or even very good. It is important to check each card as you study it and adjust it to be more refined and accurate.
-
-# License
-This is free and unencumbered software released into the public domain.
-
-Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.
-
-In jurisdictions that recognize copyright laws, the author or authors
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
-For more information, please refer to <https://unlicense.org/>
